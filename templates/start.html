@@ -1,0 +1,91 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head>
+	{% comment %} {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+        <strong>Message:</strong> {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+	{% endfor message in messages %} {% endcomment %}
+    
+	<title>Forkin' Fortunate</title>
+    <link href="https://fonts.googleapis.com/css2?family=Ysabeau:wght@300&display=swap" rel="stylesheet">
+
+	
+    <style>
+		body {
+			background-image: url("{% static 'img/dark-bg.jpg' %}"); no-repeat center center fixed;
+			background-size: cover;
+			backdrop-filter: blur(5px);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+			margin: 0;
+            font-family: 'Ysabeau', cursive;
+		}
+
+		nav {
+			position: fixed;
+			top: 2%;
+			right: 1%;
+			padding: 10px;
+		}
+
+		nav a {
+			color: white;
+			text-decoration: none;
+			margin: 0 10px;
+            font-size: larger;
+            text-shadow: 1px 1px #444;
+			font-weight: 400;
+			letter-spacing: 2px;
+			line-height: 1.2em;
+		}
+
+        nav a.button {
+
+			color: white;
+			transition: background-color 0.3s ease, color 0.3s ease;
+		}
+
+		nav a.button:hover {
+            background-color: red;
+            border-radius: 5px;
+			color: darkslategrey;
+            box-shadow: 0px 5px 0px 0px rgba(0,0,0,0.2);
+			transform: translateY(-2px);
+            text-shadow: none;
+			font-weight: 400;
+			letter-spacing: 2px;
+			line-height: 1.2em;
+            
+		}
+
+		h1 {
+			text-align: center;
+			font-size: 3em;
+			margin-top: 20px;
+            color: white;
+			font-family: 'Ysabeau', cursive;
+            text-shadow: 8px 5px #444;
+			font-weight: 400;
+			letter-spacing: 2px;
+			line-height: 1.2em;
+		}
+	</style>
+</head>
+<body>
+	<nav>
+		<a  href ="{% url 'login' %}" class="button">Login</a>
+		<a href ="{% url 'register' %}" class="button">Sign Up</a>
+		<a href ="{% url 'menu' %}" class = "button"> Menu </a>
+		<a href ="{% url 'service' %}" class = "button">Services</a>
+	</nav>
+
+	<h2 style = "color: rgb(255, 255, 255);font-weight: 510; font-size: 4.1rem;margin-bottom: 0.4rem;line-height: 0.5;text-shadow: 4px 1px red;
+					background-clip: text;height: 56px;backdrop-filter: blur(7px);
+					">Forkin Fortunate </h2>
+</body>
+</html>

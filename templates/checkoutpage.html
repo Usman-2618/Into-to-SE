@@ -1,0 +1,61 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forkin Foutunate</title>
+    <link rel="stylesheet" href="{% static 'css/cartstyle.css'%}">
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}">
+
+	
+	<style>
+		body {
+			background-image: url("{% static 'img/dark-bg.jpg' %}");
+			background-repeat: no-repeat;
+			background-size: cover;
+			backdrop-filter: blur(4px);
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100vw;
+			height: 100vh;
+			object-fit: cover;
+			z-index: -1;
+		}
+	</style>
+	
+</head>
+<body>
+	
+    <div class="container">
+        <header>
+            <h2 style = "color: rgb(255, 255, 255);font-weight: 510; font-size: 4.1rem;margin-bottom: 0.4rem;line-height: 0.5;text-shadow: 4px 1px red;
+					background-clip: text;height: 56px;margin-top: 50px;
+					">Forkin Fortunate </h2>
+        </header>
+    </div>
+	</style>
+  </head>
+  <body>
+	  <style>
+		  .order-now-btn-container {
+			position: fixed;
+			top: 15rem;
+			right: 35rem;
+			z-index: 100;
+		  }
+		</style>
+		<div class="order-now-btn-container">
+		  <a href="{% url 'welcome' %}" ><button type="button" class="btn btn-danger">click here to continue</button></a>
+		</div>
+
+    <div class="center">
+		<h2 style = "color: rgb(255, 255, 255);font-weight: 510; font-size:2.5rem;margin-bottom: 0.4rem;line-height: 0.5;text-shadow: 4px 1px red;
+					background-clip: text;height: 56px;backdrop-filter: blur(7px);
+					">Your order has been confirmed<br><br>Please wait as your order is being prepared</h2>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+{%load static%}
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Forkin Fortunate</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	{% load static %}
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="{% static 'css/style.css'%}">
+
+	</head>
+
+	{% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+        <strong>Message:</strong> {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+    </div>
+    {% endfor %}
+
+	<body class="img js-fullheight" style="background-image: url(static/images/bg.jpg);">
+	<section style = "backdrop-filter: blur(7px);" class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 style = "color: rgb(255, 255, 255);font-weight: 510; font-size: 4.1rem;margin-bottom: 0.4rem;line-height: 0.5;text-shadow: 4px 1px red;
+					background-clip: text;height: 56px;backdrop-filter: blur(7px);
+					">Forkin Fortunate </h2>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-md-6 col-lg-4">
+					<div class="login-wrap p-0">
+		      	<h3 class="mb-4 text-center">Fourtunate member?</h3>
+		      	<form action="/login" method = "post">
+					{%csrf_token%}
+		      		<div class="form-group">
+						<input type="text" class="form-control" id="username" placeholder="Username" name="username" Required>
+		      		</div>
+	            <div class="form-group">
+	              <input id="password" type="password" class="form-control" placeholder="Password" name="password" required>
+	              <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+	            </div>
+	            <div class="form-group">
+	            	<button style = "background-color: rgb(199, 32, 32);" type="submit" class="form-control btn btn- submit px-3">Sign In</button>
+	            </div>
+	            <div class="form-group d-md-flex">
+	            	<div class="w-50">
+		            	<label class="checkbox-wrap checkbox-primary"  style="color: rgb(255,255,255)">Remember Me
+									  <input type="checkbox" checked>
+									  <span class="checkmark"></span>
+									</label>
+								</div>
+								<div class="w-50 text-md-right">
+									<a href="#" style="color: #fff">Forgot Password</a>
+								</div>
+	            </div>
+	          </form>
+	          <p class="w-100 text-center">&mdash; Or Sign In With &mdash;</p>
+	          <div class="social d-flex text-center">
+	          	<a href="#" class="px-2 py-2 mr-md-1 rounded"><span class="ion-logo-facebook mr-2"></span> Facebook</a>
+	          	<a href="#" class="px-2 py-2 ml-md-1 rounded"><span class="ion-logo-twitter mr-2"></span> Twitter</a>
+	          </div>
+		      </div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="static/js/jquery.min.js"></script>
+  <script src="static/js/popper.js"></script>
+  <script src="static/js/bootstrap.min.js"></script>
+  <script src="static/js/main.js"></script>
+
+	</body>
+</html>
+
